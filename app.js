@@ -6,10 +6,14 @@ var logger = require('morgan');
 var cors=require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var admin=require('./routes/admin_routes');
+var admin=require('./routes/getAllRecruiter');
 var getAllEmplyee=require('./routes/getAllEmployees');
 var removeRec=require('./routes/deleteRec');
 var removeEmp=require('./routes/deleteEmp');
+var addrec=require('./routes/addrecruiter');
+var updaterec=require('./routes/updaterecruiter');
+var LoginVerify=require('./routes/loginVerifyroutes');
+var empDetailsById=require('./routes/empDetailsById');
 var app = express();
 
 // view engine setup
@@ -28,6 +32,10 @@ app.use('/admin',admin);
 app.use('/getAllEmployee',getAllEmplyee);
 app.use('/removeRec',removeRec);
 app.use('/removeEmp',removeEmp);
+app.use('/addrecruiter',addrec);
+app.use('/updaterecruiter',updaterec);
+app.use('/loginVerify',LoginVerify);
+app.use('/empDetailsById',empDetailsById);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
