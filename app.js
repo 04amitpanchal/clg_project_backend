@@ -14,6 +14,11 @@ var addrec=require('./routes/addrecruiter');
 var updaterec=require('./routes/updaterecruiter');
 var LoginVerify=require('./routes/loginVerifyroutes');
 var empDetailsById=require('./routes/empDetailsById');
+var updateEmpDetails=require('./routes/updateEmpDetails');
+var addEmp=require('./routes/addemp');
+var addrecByImg=require('./routes/addrecByimg');
+var updaterecByImg=require('./routes/updaterecByImg');
+var getRecById=require('./routes/getrecById');
 var app = express();
 
 // view engine setup
@@ -36,6 +41,11 @@ app.use('/addrecruiter',addrec);
 app.use('/updaterecruiter',updaterec);
 app.use('/loginVerify',LoginVerify);
 app.use('/empDetailsById',empDetailsById);
+app.use('/updateEmpDetails',updateEmpDetails);
+app.use('/addEmp',addEmp);
+app.use('/addrecbyimg',addrecByImg);
+app.use('/updaterec',updaterecByImg);
+app.use('/getRecById',getRecById);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
