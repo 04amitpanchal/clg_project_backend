@@ -1,5 +1,6 @@
 var db=require('../dbconnection');
 var ad={
+
     getrecDetailsById:function(id,callback){
         console.log(id);
         db.query("select * from recruiter_tbl where rec_id=?",[id],callback);
@@ -30,7 +31,7 @@ var ad={
     },
     updaterec:function(item,filename,callback){
         return db.query('update recruiter_tbl set password=?,company_name=?,company_web=? ,adderess=?,company_type=?,rec_photo=?  where rec_id=?',
-        [item.password,item.company_name,item.company_web,item.adderess,item.company_type,filename,id],
+        [item.password,item.company_name,item.company_web,item.adderess,item.company_type,filename,item.rec_id],
         callback);
     },
     updateEmpDetails:function(item,filename,callback){

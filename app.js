@@ -19,7 +19,11 @@ var addEmp=require('./routes/addemp');
 var addrecByImg=require('./routes/addrecByimg');
 var updaterecByImg=require('./routes/updaterecByImg');
 var getRecById=require('./routes/getrecById');
+var getjobdetails=require('./routes/job');
+var addJob=require('./routes/addJob');
+
 var app = express();
+var mail=require('./routes/email_routes');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,6 +50,10 @@ app.use('/addEmp',addEmp);
 app.use('/addrecbyimg',addrecByImg);
 app.use('/updaterec',updaterecByImg);
 app.use('/getRecById',getRecById);
+app.use('/maildemo',mail);
+app.use('/showjob',getjobdetails);
+app.use('/addjob',addJob);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
