@@ -6,7 +6,14 @@ var job={
         },
         getjobdetails:function(callback){
             db.query("select r.company_name,j.* from job_tbl j,recruiter_tbl r ",callback);
+        },
+        removeJob(item,callback){
+        var delArr=[];
+        for(i=0;i<item.length;i++){
+            delArr[i]=item[i].job_id;
         }
+        return db.query("delete from job_tbl where job_id in (?)",[delArr],callback);
+    },
 }
 
 module.exports=job;

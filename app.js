@@ -21,6 +21,12 @@ var updaterecByImg=require('./routes/updaterecByImg');
 var getRecById=require('./routes/getrecById');
 var getjobdetails=require('./routes/job');
 var addJob=require('./routes/addJob');
+var getAllApply=require('./routes/apply');
+var getAllInterviewDetails=require('./routes/interview');
+var addJob=require('./routes/addJob');
+var addedu=require('./routes/education');
+var deledu=require('./routes/deleteEducation');
+var response=require('./routes/response');
 
 var app = express();
 var mail=require('./routes/email_routes');
@@ -53,7 +59,12 @@ app.use('/getRecById',getRecById);
 app.use('/maildemo',mail);
 app.use('/showjob',getjobdetails);
 app.use('/addjob',addJob);
-
+app.use('/applyjob',getAllApply);
+app.use('/interview',getAllInterviewDetails);
+app.use('/addjob',addJob);
+app.use('/addedu',addedu);
+app.use('/deledu',deledu);
+app.use('/response',response);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
