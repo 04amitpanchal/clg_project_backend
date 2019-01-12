@@ -1,4 +1,4 @@
-var admin=require('../model/addJob');
+var admin=require('../model/job');
 var express=require('express');
 var route=express.Router();
 

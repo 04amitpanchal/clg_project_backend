@@ -4,7 +4,7 @@ var route=express.Router();
 
 
 
-route.post('/',function(req,res,next){
+route.delete('/:id',function(req,res,next){
     admin.deleteEducation(req.body,function(err,rows){
         if (err) {
             res.json(err);
@@ -13,5 +13,16 @@ route.post('/',function(req,res,next){
         }
     });
 });
+
+route.post('/',function(req,res,next){
+    admin.deleteSelectedEducation(req.body,function(err,rows){
+        if (err) {
+            res.json(err);
+        } else {
+            res.json(rows);
+        }
+    });
+});
+
 
 module.exports=route;

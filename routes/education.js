@@ -17,7 +17,7 @@ route.post('/',function(req,res,next){
 
 
 route.put('/:id',function(req,res,next){
-    admin.updateEducation(req.body,req.params.id,function(err,rows){
+    admin.updateEducation(req.params.id,req.body,function(err,rows){
         if (err) {
             res.json(err);
         } else {

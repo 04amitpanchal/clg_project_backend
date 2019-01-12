@@ -43,6 +43,11 @@ var ad={
         return db.query('insert into employee_tbl values(?,?,?,?,?,?,?,?,?)',  
         [item.emp_id,item.emp_password,item.first_name,item.last_name,item.country,item.state,item.city,item.emp_field,filename],callback
     );
+    },
+    Adminverify:function(item,callback){
+        return  db.query('select username,password from admin where username=? and password=?',
+        [item.username,item.password],
+        callback);
     }
 
   

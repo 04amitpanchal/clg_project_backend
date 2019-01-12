@@ -12,4 +12,16 @@ route.get('/',function(req,res,next){
     });
 });
 
+route.put('',function(req,res,next){
+    admin.updateJob(req.body,function(err,rows){
+        if (err) {
+            res.json(err);
+        } else {
+            res.json(rows);
+        }
+    });
+});
+
+
+
 module.exports=route;

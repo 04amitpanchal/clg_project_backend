@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var demo = require("../model/email");
+var demo = require("../model/emailmodel");
 router.post('/',function(req,res,next){
 
     console.log(req.body);
