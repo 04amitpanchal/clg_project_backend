@@ -49,8 +49,8 @@ var response=require('./routes/response');
 var getResponseById=require('./routes/getResponseByResponseId');
 var removeSelectedResponse=require('./routes/removeSelectedResponse');
 var updateEducation=require('./routes/education');
-// var emailService=require('./routes/emailroute');
-// var sendAdminpassword=require('./routes/sendAdminPassword');
+var emailService=require('./routes/email_routes');
+var sendAdminpassword=require('./routes/sendAdminPassword');
 
 
 // view engine setup
@@ -105,8 +105,8 @@ app.use('/response',response);
 app.use('/getResponseById',getResponseById);
 app.use('/removeSelectedResponse',removeSelectedResponse);
 app.use('/updateEducation',updateEducation);
-// app.use('/email',emailService);
-// app.use('/sendAdminPassword',sendAdminpassword);
+app.use('/email',emailService);
+app.use('/sendAdminPassword',sendAdminpassword);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
