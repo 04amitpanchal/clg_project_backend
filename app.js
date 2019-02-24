@@ -51,7 +51,10 @@ var removeSelectedResponse=require('./routes/removeSelectedResponse');
 var updateEducation=require('./routes/education');
 var emailService=require('./routes/email_routes');
 var sendAdminpassword=require('./routes/sendAdminPassword');
-
+var sj=require('./routes/company_details_routes');
+var getJobBySearch=require('./routes/getJobBySearch');
+var getJobTitles=require('./routes/getAllJobTitles');
+var getAllCompanyField=require('./routes/getAllCompanyField');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -107,6 +110,10 @@ app.use('/removeSelectedResponse',removeSelectedResponse);
 app.use('/updateEducation',updateEducation);
 app.use('/email',emailService);
 app.use('/sendAdminPassword',sendAdminpassword);
+app.use('/similarJob',sj);
+app.use('/allCompany',getAllCompanyField);
+app.use('/allJobTitles',getJobTitles);
+app.use('/jobBySearch',getJobBySearch);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
